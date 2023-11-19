@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Roboto } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/lib/theme-provider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Providers from "@/lib/providers";
 import { BASE_URL } from "@/lib/constant";
 
 const inter = Roboto({
@@ -76,14 +75,12 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {" "}
-          <Providers>
             <main
               className={cn(
                 "min-h-screen w-full",
                 "bg-gradient-to-tr from-primary/70 to-background dark:from-primary/70 dark:via-background dark:to-background",
                 "text-foreground"
               )}
-              // style={{ backgroundImage: `url('/static/bg.webp')` }}
             >
               <div
                 className={cn(
@@ -100,7 +97,6 @@ export default function RootLayout({
                 <Footer></Footer>
               </div>
             </main>
-          </Providers>
         </ThemeProvider>
       </body>
     </html>

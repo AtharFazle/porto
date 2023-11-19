@@ -31,7 +31,8 @@ export default function App({ data }: AppProps) {
     <div className="my-10 min-h-fit">
       {isClient ? (
            <Swiper
-           spaceBetween={10}
+           spaceBetween={20}
+           centeredSlides={true}
            autoplay={{ delay: 2500, disableOnInteraction: false,waitForTransition:true,stopOnLastSlide:true }}
            breakpoints={{
              576: {
@@ -40,10 +41,12 @@ export default function App({ data }: AppProps) {
              },
              768: {
                width: 768,
+               centeredSlides:true,
                slidesPerView: 2,
              },
              1024: {
                width: 768,
+               centeredSlides:true,
                slidesPerView: 3,
              },
            }}
@@ -55,7 +58,7 @@ export default function App({ data }: AppProps) {
          >
           {data &&
             data.docs.map((item, index) => (
-              <SwiperSlide key={index} className="flex justify-center items-center mx-5 overflow-visible">
+              <SwiperSlide key={index} className="flex justify-center items-center overflow-visible">
                 <div className={cn(`relative w-80 h-72 overflow-visible z-${index * 10}`)}>
                   <Image
                     className="rounded-lg shadow-lg shadow-primary"

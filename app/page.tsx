@@ -43,7 +43,6 @@ async function getCarrousel (){
 }
 
 export default async function Home() {
-  const url = getUrl();
   const data = await getDataHomePage();
   const dataCarrousel = await getCarrousel()
   return (
@@ -68,6 +67,8 @@ export default async function Home() {
         <div className="flex flex-row gap-2">
           {sosmed.map((item) => (
             <Link
+              target="_blank"
+              aria-label={`Redirect to ${item.name}`}
               href={item.link}
               className="text-4xl text-slate-500 hover:text-primary duration-200 ease-linear"
               key={item.name}

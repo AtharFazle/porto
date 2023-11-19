@@ -3,9 +3,6 @@ import React from "react";
 import {
   TypographyH1,
   TypographyH2,
-  TypographyH3,
-  TypographyH4,
-  TypographyP,
 } from "./typography";
 import { responseArticles } from "@/type/Payload";
 import { cn } from "@/lib/utils";
@@ -45,13 +42,13 @@ export default async function FeaturedArticles() {
           <Link
           href={`/article/${item.slug}`}
             className={cn(
-              "flex flex-col group md:flex-row gap-5 p-10",
+              "flex flex-col group md:flex-row gap-5 p-5 md:p-10",
               "rounded-lg hover:bg-slate-200 duration-200 ease-linear dark:hover:bg-slate-700"
             )}
             key={item.id}
           >
-            <div className="basis-1/4">
-              <div className="w-full h-48 md:h-28 relative">
+            <div className="basis-1/3">
+              <div className="w-full h-56 md:h-[152px] relative">
                 <Image
                   className="rounded-lg shadow-lg shadow-primary/50 group-hover:shadow-primary"
                   src={`${item.headingImg.url}`}
@@ -60,9 +57,9 @@ export default async function FeaturedArticles() {
                 />
               </div>
             </div>
-            <div className="basis-3/4 flex flex-col gap-3 text-sm">
-              <TypographyH4>{item.title}</TypographyH4>
-              <p className="text-slate-500">{item.meta.description}</p>
+            <div className="basis-2/3 flex flex-col gap-3 text-sm">
+              <h1 className="scroll-m-20 text-xl font-semibold tracking-tight">{item.title}</h1>
+              <h2 className="text-slate-500">{item.meta.description}</h2>
               <div
 
                 className="text-primary group-hover:underline underline-offset-2 flex flex-row gap-1 items-center"
