@@ -5,6 +5,5 @@ export default function getUrl() {
     const domain = headersList.get('host') || "";
     const fullUrl = headersList.get('referer') || "";
     
-    console.log(fullUrl);
     return fullUrl
 }

@@ -57,10 +57,10 @@ const Work: FC<WorkProps> = async ({}) => {
             >
               <Avatar className="p-0.5 bg-white">
                 <AvatarImage
-                  className="rounded-full"
-                  src={`${CMS_URL}/media/athar.jpg`}
+                  className="rounded-full w-20 h-20"
+                  src={item.companyLogo.url}
                 />
-                <AvatarFallback>{item.companyLogo.alt}</AvatarFallback>
+                <AvatarFallback className="text-primary">{item.companyLogo.alt}</AvatarFallback>
               </Avatar>
               <div className="flex flex-col gap-2 text-xs w-full">
                 <p className="font-semibold">{item.company}</p>

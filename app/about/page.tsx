@@ -60,7 +60,7 @@ export default async function About() {
       <div className="basis-1/2 space-y-16">
         <div className="rounded-full w-[250px] sm:w-[300px] md:w-[400px] h-[350px] sm:h-[450px] md:h-[570px] flex justify-end  relative">
           <Image
-            src={`${CMS_URL}${data?.heading_image?.url}`}
+            src={`${data?.heading_image?.url}`}
             fill
             alt="athar"
             className="rounded-lg skew-x-6 translate-x-0 sm:translate-x-10 md:translate-x-16 -skew-y-6 shadow-2xl shadow-black"

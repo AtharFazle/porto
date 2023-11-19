@@ -1,3 +1,4 @@
+import { TypographyH1 } from "@/components/typography";
 import React,{FC} from "react"
 
 interface ExperienceProps {}
@@ -5,9 +6,9 @@ interface ExperienceProps {}
 
 const Experience:FC<ExperienceProps> = ({}) => {
   return (
-    <div>
-      Share My Experience
-    </div>
+    <TypographyH1>
+      Coming Soon....
+    </TypographyH1>
   )
 };
 

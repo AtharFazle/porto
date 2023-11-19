@@ -1,3 +1,3 @@
-export const CMS_URL = "http://localhost:3000"
-export const RevalidateTime = 60
-export const BASE_URL =     "http://localhost:3001"
+export const CMS_URL = "https://porto-cms-production.up.railway.app"
+export const RevalidateTime = 3600
+export const BASE_URL =     "https://atharfaz.com"

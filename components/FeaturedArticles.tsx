@@ -54,7 +54,7 @@ export default async function FeaturedArticles() {
               <div className="w-full h-48 md:h-28 relative">
                 <Image
                   className="rounded-lg shadow-lg shadow-primary/50 group-hover:shadow-primary"
-                  src={`${CMS_URL}${item.headingImg.url}`}
+                  src={`${item.headingImg.url}`}
                   alt={item.headingImg.alt}
                   fill
                 />

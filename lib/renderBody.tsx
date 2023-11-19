@@ -69,7 +69,7 @@ function renderBodyItem(item: BodyItem, index: number): JSX.Element | string | u
       <figure className="flex flex-col my-10 gap-1 justify-center items-center" key={index}>
         <Image
           className="rounded-sm"
-          src={`${CMS_URL}${item.value!.url}`}
+          src={`${item.value!.url}`}
           alt={item.value!.alt}
           width={item.value!.width}
           height={item.value!.height}

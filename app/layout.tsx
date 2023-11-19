@@ -16,19 +16,19 @@ const inter = Roboto({
 const meta = {
   title: `Atharfaz`,
   description:
-    "This is My Personal Blog. I will share my journey and insights about my journey. I will share my journey and insights about my journey. I will share my journey and insights about my journey.",
-  images: `/assets/favicon_io/android-chrome-512x512.png`,
+    "This is My Personal Blog. I will share my journey and insights about my journey.",
+  images: `/static/favicon_io/android-chrome-512x512.png`,
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${BASE_URL}`),
   icons: {
     icon: [
-      "/assets/favicon_io/android-chrome-512x512.png",
-      "/assets/favicon_io/android-chrome-192x192.png",
+      "/static/favicon_io/android-chrome-512x512.png",
+      "/static/favicon_io/android-chrome-192x192.png",
     ],
-    apple: ["/assets/favicon_io/apple-touch-icon.png"],
-    shortcut: ["/assets/favicon_io/android-chrome-512x512.png"],
+    apple: ["/static/favicon_io/apple-touch-icon.png"],
+    shortcut: ["/static/favicon_io/android-chrome-512x512.png"],
   },
   title: {
     default: meta.title,

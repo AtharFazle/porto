@@ -63,6 +63,10 @@ export interface DataCarrousel{
 
 export interface responseArticles {
   docs: DataArticles[];
+  totalDocs: number;
+  totalPages:number;
+  page:number;
+  limit:number
 }
 
 export interface DataArticles {

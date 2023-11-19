@@ -8,9 +8,7 @@ export const contentType = "image/png";
 export const runtime = 'edge'
 
 export default async function Image({ params }: {params:ArticleProps["params"]}) {
-  console.log(params,"params")
   const url = `${CMS_URL}/api/articles${Query(params.slug)}`;
-  console.log(url,"url")
   const data = await fetch(url).then((res) =>
   res.json()
 )
@@ -19,7 +17,7 @@ const article = data.docs[0]
       (
         <div tw="relative flex items-center justify-center bg-black">
           <img
-            src={`${CMS_URL}${article?.headingImg.url}`}
+            src={`${article?.headingImg.url}`}
             alt={article?.headingImg.alt}
           />
         </div>

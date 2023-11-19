@@ -56,9 +56,9 @@ export async function generateMetadata({ params }: { params: ArticleProps["param
     title: meta?.title,
     description: meta?.description,
     alternates: {
-      canonical: `id/articles/detail/${params.slug}`,
+      canonical: `/article/${params.slug}`,
       languages: {
-        id: `id/articles/detail/${params.slug}`,
+        id: `/article/${params.slug}`,
       },
     },
     openGraph: {
@@ -91,7 +91,6 @@ export async function generateStaticParams() {
     );
 
   const data: responseArticles = await res.json();
-  console.log(data)
 
   if (!data) {
     throw new Error("failed to fetch data");
@@ -108,7 +107,7 @@ const Article: FC<ArticleProps> = async ({ params }) => {
     <div className="max-w-2xl mx-auto space-y-10">
       <div className="w-full h-64 sm:h-72 md:h-96 relative">
         <Image
-          src={`${CMS_URL}${data.headingImg.url}`}
+          src={`${data.headingImg.url}`}
           alt={data.headingImg.alt}
           className="rounded-md shadow-xl"
           fill

@@ -7,7 +7,7 @@ import qs from "qs";
 import { responseArticles } from "@/type/Payload";
 import { formatDate } from "@/lib/formatDate";
 import Image from "next/image";
-import { TypographyH1, TypographyH4 } from "@/components/typography";
+import { TypographyH1, TypographyH2, TypographyH4 } from "@/components/typography";
 import { ChevronRightIcon } from "@radix-ui/react-icons";
 import { MdChevronRight } from "react-icons/md";
 import Link from "next/link";
@@ -60,11 +60,15 @@ const Content: FC<ContentProps> = () => {
       const stringifiedQuery = qs.stringify(
         {
           where: query,
+          locale: 'en',
+          draft: 'false',
+          depth: 1,
+          limit: 5
         },
         { addQueryPrefix: true }
       );
 
-      const url = `${CMS_URL}/api/Articles?locale=en&draft=false&depth=1&limit=5`;
+      const url = `${CMS_URL}/api/Articles${stringifiedQuery}`;
 
       try {
         const fetched = await fetch(url);
@@ -75,7 +79,6 @@ const Content: FC<ContentProps> = () => {
           return null;
         }
         setLoading(true);
-        console.log(response);
         // Process the fetched data as needed
         setData(response);
       } catch (error) {
@@ -88,7 +91,6 @@ const Content: FC<ContentProps> = () => {
     getData();
   }, [debounceSearch, selectedFilters]);
 
-  console.log(data, "data");
 
   return (
     <div className="mt-10 text-slate-500 dark:text-slate-200">
@@ -138,7 +140,9 @@ const Content: FC<ContentProps> = () => {
         </div>
         {debounceSearch && (
           <p>
-            Result for <strong>{debounceSearch}</strong>
+            Result for <strong>{debounceSearch}</strong>  {selectedFilters.map((item,index)=>{
+              return <span key={index}>& <strong>{item}</strong> Category</span>
+            })}
           </p>
         )}
       </div>
@@ -159,7 +163,7 @@ const Content: FC<ContentProps> = () => {
                     <div className="w-full h-48 md:h-40 relative ">
                       <Image
                         className="rounded-lg shadow-lg shadow-primary/50 group-hover:shadow-primary"
-                        src={`${CMS_URL}${item.headingImg.url}`}
+                        src={`${item.headingImg.url}`}
                         alt={item.headingImg.alt}
                         fill
                       />
@@ -197,7 +201,10 @@ const Content: FC<ContentProps> = () => {
           })}
         </div>
       )}
-      {loading && <div>loading....</div>}
+      {loading === true && <div>loading....</div>}
+      {data?.totalDocs === 0 && (
+        <TypographyH4 classNames={"text-center"}>Data Kosong 🤧</TypographyH4>
+      )}
     </div>
   );
 };

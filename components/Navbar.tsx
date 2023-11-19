@@ -42,7 +42,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
       <Avatars/>
       <div
         className={cn(
-          "hidden md:flex flex-row items-center gap-7",
+          "hidden md:flex flex-row items-center gap-7 font-semibold",
           "px-7 rounded-full border shadow-lg dark:bg-zinc-800 dark:border-none from-primary/10 to-transparent bg-gradient-to-tl"
         )}
       >
