@@ -152,7 +152,7 @@ const Content: FC<ContentProps> = () => {
             return (
               <Link
                 href={`/article/${item.slug}`}
-                className="w-full p-5 rounded-md flex flex-row"
+                className="w-full p-2 md:p-5 rounded-md flex flex-row"
                 key={index}
               >
                 <div className="basis-1/4 text-center hidden md:flex items-center justify-center">
@@ -160,7 +160,7 @@ const Content: FC<ContentProps> = () => {
                 </div>
                 <div className="flex flex-col md:flex-row items-center gap-y-10 gap-x-5 basis-4/4 md:basis-3/4 group hover:bg-slate-200 dark:hover:bg-slate-700 rounded-md cursor-pointer  duration-200 ease-in-out p-5">
                   <div className="w-full md:basis-1/3">
-                    <div className="w-full h-48 md:h-40 relative ">
+                    <div className="w-full h-48 md:h-48 relative ">
                       <Image
                         className="rounded-lg shadow-lg shadow-primary/50 group-hover:shadow-primary"
                         src={`${item.headingImg.url}`}
@@ -169,7 +169,7 @@ const Content: FC<ContentProps> = () => {
                       />
                     </div>
                   </div>
-                  <div className="flex flex-col gap-10 basis-2/3 relative">
+                  <div className="flex flex-col gap-5 md:gap-10 basis-2/3 relative">
                     <TypographyH4 classNames="w-full">
                       {item.title}
                     </TypographyH4>
@@ -178,7 +178,7 @@ const Content: FC<ContentProps> = () => {
                         "cursor-pointer transition-colors duration-200 ease-linear",
                         "bg-slate-200 dark:bg-slate-700",
                         "w-fit text-xs",
-                        "absolute top-8 left-0 md:hidden",
+                        "block md:hidden",
                         "px-3 py-1 rounded-md"
                       )}
                     >
