@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react'
 import Link from 'next/link'
 import { Text } from 'slate'
+import Image from 'next/image'
+import { Link1Icon } from '@radix-ui/react-icons'
 
 // eslint-disable-next-line no-use-before-define
 type Children = Leaf[]
@@ -10,11 +12,21 @@ type Leaf = {
   value?: {
     url: string
     alt: string
+    width:number;
+    height:number
   }
   children?: Children
   url?: string
   [key: string]: unknown
 }
+const headingStyles = {
+  h1: "scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl",
+  h2: "scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0",
+  h3: "scroll-m-20 text-2xl font-semibold tracking-tight",
+  h4: "scroll-m-20 text-xl font-semibold tracking-tight",
+  h5: "text-sm",
+  h6: "text-xs",
+};
 
 const serialize = (children?: Children, wrapInParagraph: boolean = true): React.ReactNode[] =>
   children?.map((node, i) => {
@@ -65,17 +77,21 @@ const serialize = (children?: Children, wrapInParagraph: boolean = true): React.
 
     switch (node.type) {
       case 'h1':
-        return <h1 key={i}>{serialize(node?.children)}</h1>
+        return <h1 className={headingStyles.h1} key={i}>{serialize(node?.children)}</h1>
+      case 'upload':
+        return <Image className='mx-auto my-8 shadow-xl shadow-primary rounded-xl' src={node.value!.url!} alt={node.value!.alt!} width={node.value!.width} height={node.value!.height} key={i}/>
+      case 'link':
+        return <Link target={node.newTab === true ? "_blank" : "_self"} className='underline hover:text-primary duration-200 ease-linear flex flex-row items-center' href={node.url as string} key={i}>{serialize(node?.children)} <Link1Icon className='animate-bounce-horizontal text-xl'/></Link>
       case 'h2':
-        return <h2 key={i}>{serialize(node?.children)}</h2>
+        return <h2 className={headingStyles.h2} key={i}>{serialize(node?.children)}</h2>
       case 'h3':
-        return <h3 key={i}>{serialize(node?.children)}</h3>
+        return <h3 className={headingStyles.h3} key={i}>{serialize(node?.children)}</h3>
       case 'h4':
-        return <h4 key={i}>{serialize(node?.children)}</h4>
+        return <h4 className={headingStyles.h4} key={i}>{serialize(node?.children)}</h4>
       case 'h5':
-        return <h5 key={i}>{serialize(node?.children)}</h5>
+        return <h5 className={headingStyles.h5} key={i}>{serialize(node?.children)}</h5>
       case 'h6':
-        return <h6 key={i}>{serialize(node?.children)}</h6>
+        return <h6 className={headingStyles.h6} key={i}>{serialize(node?.children)}</h6>
       case 'quote':
         return <blockquote key={i}>{serialize(node?.children)}</blockquote>
       case 'ul':
