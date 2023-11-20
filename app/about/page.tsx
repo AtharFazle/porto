@@ -9,7 +9,6 @@ import { sosmed } from "@/components/NavigationMenu";
 import Link from "next/link";
 import { CMS_URL, RevalidateTime } from "@/lib/constant";
 import { Content, Homes } from "@/type/Payload";
-import renderRichText from "@/lib/renderBody";
 import serialize from "@/lib/renderBody";
 
 async function getDataAboutPage() {
