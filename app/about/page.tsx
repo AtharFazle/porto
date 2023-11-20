@@ -1,8 +1,5 @@
 import {
   TypographyH1,
-  TypographyH2,
-  TypographyH3,
-  TypographyP,
 } from "@/components/typography";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -12,7 +9,8 @@ import { sosmed } from "@/components/NavigationMenu";
 import Link from "next/link";
 import { CMS_URL, RevalidateTime } from "@/lib/constant";
 import { Content, Homes } from "@/type/Payload";
-import renderBody from "@/lib/renderBody";
+import renderRichText from "@/lib/renderBody";
+import serialize from "@/lib/renderBody";
 
 async function getDataAboutPage() {
   const url = `${CMS_URL}/api/globals/Home?locale=en&draft=false&depth=1`;
@@ -48,10 +46,11 @@ export default async function About() {
 
         {data?.content.map((item :Content, index) => {
           return (
-            <div className="mb-16" key={index}>
+            <div className="my-8 space-y-5" key={index}>
               <TypographyH1>{item.title}</TypographyH1>
-
-              {renderBody(item.description)}
+              <div className="space-y-5">
+              {serialize(item.description as any)}
+              </div>
             </div>
           );
         })}
