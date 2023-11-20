@@ -83,7 +83,7 @@ const serialize = (children?: Children, wrapInParagraph: boolean = true): React.
       case 'ol':
         return <ol className='list-decimal list-inside' key={i}>{serialize(node.children)}</ol>
       case 'li':
-        return <li key={i}>{serialize(node.children, false)}</li>
+        return <li className='leading-7 text-left' key={i}>{serialize(node.children, false)}</li>
       case 'link':
         return (
           <Link
@@ -95,7 +95,7 @@ const serialize = (children?: Children, wrapInParagraph: boolean = true): React.
         )
 
       default:
-        return wrapInParagraph ? <p key={i}>{serialize(node?.children)}</p> : serialize(node?.children)
+        return wrapInParagraph ? <p className='leading-7 text-left [&:not(:first-child)]:mt-6' key={i}>{serialize(node?.children)}</p> : serialize(node?.children)
     }
   }) || []
 
