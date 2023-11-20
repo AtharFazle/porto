@@ -67,7 +67,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator />
               {Links.map((item, index) => (
-                <DropdownMenuItem key={index}>
+                <DropdownMenuItem className={cn(path.includes(item.link) ? "bg-primary hover:bg-primary/80 text-white":"")} key={index}>
                   <Link href={item.link}>{item.name}</Link>
                 </DropdownMenuItem>
               ))}

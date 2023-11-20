@@ -87,15 +87,16 @@ function renderBodyItem(item: BodyItem, index: number): JSX.Element | string | u
 
   if (item.type === "ol") {
     return (
-      <ol className="list-inside list-decimal mt-64" key={index}>
-        {children}
-      </ol>
+<ol className="text-red-500 list-decimal mt-64" key={index} style={{ listStylePosition: 'inside' }}>
+  {children}
+</ol>
+
     );
   }
 
   if (item.type === "ul") {
     return (
-      <ul className="list-inside list-disc mt-64" key={index}>
+      <ul className="list-disc mt-64" key={index} style={{ listStylePosition: 'inside' }}>
         {children}
       </ul>
     );
