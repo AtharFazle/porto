@@ -126,7 +126,7 @@ const Article: FC<ArticleProps> = async ({ params }) => {
       </div>
       <Separator className="h-[3px]"/>
 
-      <div>{renderBody(data.description)}</div>
+      <div>{renderBody(data.description as any)}</div>
     </div>
   );
 };
