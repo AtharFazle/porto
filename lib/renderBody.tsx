@@ -87,7 +87,7 @@ function renderBodyItem(item: BodyItem, index: number): JSX.Element | string | u
 
   if (item.type === "ol") {
     return (
-<ol className="text-red-500 list-decimal mt-64" key={index} style={{ listStylePosition: 'inside' }}>
+<ol className=" list-decimal mt-64" key={index} style={{ listStylePosition: 'inside' }}>
   {children}
 </ol>
 
