@@ -34,6 +34,8 @@ async function getData() {
   }));
 }
 
+export const dynamic = "force-dynamic"
+
 const Project: FC<ProjectProps> = async ({}) => {
   const data = await getData();
   return (
