@@ -1,14 +1,6 @@
-import { TypographyH1, TypographyH4, TypographyP } from "@/components/typography";
+import { TypographyH1, TypographyP } from "@/components/typography";
 import { cn } from "@/lib/utils";
 import React, { FC } from "react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { CMS_URL, RevalidateTime } from "@/lib/constant";
 import { DataProject, responseProject } from "@/type/Payload";
 import Image from "next/image";
@@ -22,7 +14,7 @@ async function getData() {
   const url = `${CMS_URL}/api/Projects?locale=en&draft=false&depth=1`;
   const response = await fetch(url, {
     next: {
-      revalidate: RevalidateTime,
+      revalidate: 10,
     },
   });
 
@@ -59,8 +51,7 @@ const Project: FC<ProjectProps> = async ({}) => {
       >
         {data?.map((item, index) => {
           return (
-            <div key={index}>
-                          <Link  href={item.link} target="_blank" className="space-y-5 p-5 border-2 border-primary/60 md:border-none rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 ease-in duration-200 group cursor-pointer">
+                          <Link key={index}  href={item.link} target="_blank" className="space-y-5 p-5 border-2 border-primary/60 md:border-none rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 ease-in duration-200 group cursor-pointer">
               <div className="relative w-full h-40 lg:w-80 lg:h-48 shadow-lg dark:shadow-primary/50">
                 <Image
                   src={`${item.HeadingImg.url}`}
@@ -86,7 +77,6 @@ const Project: FC<ProjectProps> = async ({}) => {
               <p className="text-sm">{item.name}</p>
               </div>
             </Link>
-            </div>
           );
         })}
       </div>
