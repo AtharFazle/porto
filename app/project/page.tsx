@@ -34,7 +34,7 @@ async function getData() {
   }));
 }
 
-export const dynamic = "force-dynamic"
+export const dynamic = "force-dynamic";
 
 const Project: FC<ProjectProps> = async ({}) => {
   const data = await getData();
@@ -51,36 +51,56 @@ const Project: FC<ProjectProps> = async ({}) => {
       <div
         className={cn("grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ")}
       >
-        {data?.map((item, index) => {
-          return (
-                          <Link key={index}  href={item.link} target="_blank" className="space-y-5 p-5 border-2 border-primary/60 md:border-none rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 ease-in duration-200 group cursor-pointer">
-              <div className="relative w-full h-40 lg:w-80 lg:h-48 shadow-lg dark:shadow-primary/50">
-                <Image
-                  src={`${item.HeadingImg.url}`}
-                  alt={item.HeadingImg.alt}
-                  className="rounded-md"
-                  fill
-                />
-              </div>
-              <div
-                className={cn(
-                  "cursor-pointer transition-colors duration-200 ease-linear",
-                   "bg-slate-200 dark:bg-slate-700",
-                   "w-fit text-xs",
-                  "px-3 py-1 rounded-md"
-                )}
+{data
+  ?.sort((a, b) => {
+    if (a.name.toLowerCase() === "pos indonesia") {
+      return -1; // a ditempatkan lebih awal
+    } else if (b.name.toLowerCase() === "pos indonesia") {
+      return 1; // b ditempatkan lebih awal
+    } else {
+      // Jika bukan "Pos Indonesia", menggunakan tanggal updatedAt
+      return new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime();
+    }
+  })
+  .map((item, index) => {
+            return (
+              <Link
+                key={index}
+                href={item.link}
+                target="_blank"
+                className="space-y-5 p-5 border-2 border-primary/60 md:border-none rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 ease-in duration-200 group cursor-pointer"
               >
-                {formatDate(item.updatedAt)}
-              </div>
-              <p className="font-semibold text-base">{item.name}</p>
-              <TypographyP classNames={"text-slate-600 dark:text-slate-400 text-sm"}>{item.description}</TypographyP>
-              <div className="w-full flex flex-row gap-1 items-center justify-center group-hover:text-primary duration-200 ease-linear pt-16 group-hover:animate-bounce-horizontal">
-                <MdLink className={cn("text-xl")}/>
-              <p className="text-sm">{item.name}</p>
-              </div>
-            </Link>
-          );
-        })}
+                <div className="relative w-full h-40 lg:w-80 lg:h-48 shadow-lg dark:shadow-primary/50">
+                  <Image
+                    src={`${item.HeadingImg.url}`}
+                    alt={item.HeadingImg.alt}
+                    className="rounded-md"
+                    fill
+                  />
+                </div>
+                <div
+                  className={cn(
+                    "cursor-pointer transition-colors duration-200 ease-linear",
+                    "bg-slate-200 dark:bg-slate-700",
+                    "w-fit text-xs",
+                    "px-3 py-1 rounded-md"
+                  )}
+                >
+                  {formatDate(item.updatedAt)}
+                </div>
+                <p className="font-semibold text-base">{item.name}</p>
+                <TypographyP
+                  classNames={"text-slate-600 dark:text-slate-400 text-sm"}
+                >
+                  {item.description}
+                </TypographyP>
+                <div className="w-full flex flex-row gap-1 items-center justify-center group-hover:text-primary duration-200 ease-linear pt-16 group-hover:animate-bounce-horizontal">
+                  <MdLink className={cn("text-xl")} />
+                  <p className="text-sm">{item.name}</p>
+                </div>
+              </Link>
+            );
+          })}
       </div>
     </div>
   );
