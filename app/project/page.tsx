@@ -14,7 +14,7 @@ async function getData() {
   const url = `${CMS_URL}/api/Projects?locale=en&draft=false&depth=1`;
   const response = await fetch(url, {
     next: {
-      revalidate: 10,
+      revalidate: RevalidateTime,
     },
   });
 
