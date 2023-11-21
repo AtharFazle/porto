@@ -59,7 +59,8 @@ const Project: FC<ProjectProps> = async ({}) => {
       >
         {data?.map((item, index) => {
           return (
-            <Link  href={item.link} target="_blank" key={index} className="space-y-5 p-5 border-2 border-primary/60 md:border-none rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 ease-in duration-200 group cursor-pointer">
+            <div key={index}>
+                          <Link  href={item.link} target="_blank" className="space-y-5 p-5 border-2 border-primary/60 md:border-none rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 ease-in duration-200 group cursor-pointer">
               <div className="relative w-full h-40 lg:w-80 lg:h-48 shadow-lg dark:shadow-primary/50">
                 <Image
                   src={`${item.HeadingImg.url}`}
@@ -85,6 +86,7 @@ const Project: FC<ProjectProps> = async ({}) => {
               <p className="text-sm">{item.name}</p>
               </div>
             </Link>
+            </div>
           );
         })}
       </div>
