@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Epilogue, Roboto } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/lib/theme-provider";
@@ -7,8 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BASE_URL } from "@/lib/constant";
 
-const inter = Roboto({
-  weight: ["100", "300", "400", "700", "900"],
+const inter = Epilogue({
   subsets: ["latin"],
 });
 

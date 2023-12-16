@@ -13,20 +13,20 @@ import { Homes, responseCarrousel } from "@/type/Payload";
 import FeaturedArticles from "@/components/FeaturedArticles";
 import Carrousel from "@/components/Carrousel/Carrousel";
 
-async function getDataHomePage() {
-  const url = `${CMS_URL}/api/globals/Home?locale=en&draft=false&depth=1`;
-  const res = await fetch(url, {
-    next: {
-      revalidate: RevalidateTime,
-    },
-  });
-  if (!res.ok) {
-    return null;
-  }
-  const data: Homes = await res.json();
+// async function getDataHomePage() {
+//   const url = `${CMS_URL}/api/globals/Home?locale=en&draft=false&depth=1`;
+//   const res = await fetch(url, {
+//     next: {
+//       revalidate: RevalidateTime,
+//     },
+//   });
+//   if (!res.ok) {
+//     return null;
+//   }
+//   const data: Homes = await res.json();
 
-  return data;
-}
+//   return data;
+// }
 
 async function getCarrousel (){
   const url = `${CMS_URL}/api/carrousel?locale=en&draft=false&depth=1`;
@@ -43,7 +43,6 @@ async function getCarrousel (){
 }
 
 export default async function Home() {
-  const data = await getDataHomePage();
   const dataCarrousel = await getCarrousel()
   return (
     <div>
@@ -87,5 +86,6 @@ export default async function Home() {
         </div>
       </div>
     </div>
+
   );
 }

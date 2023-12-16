@@ -1,4 +1,3 @@
-
 import { CMS_URL, RevalidateTime } from "@/lib/constant";
 import { responseJob } from "@/type/Payload";
 import React, { FC } from "react";
@@ -49,20 +48,12 @@ const Work: FC<WorkProps> = async ({}) => {
 
       <ul className={cn("flex flex-col gap-5")}>
         {jobData?.map((item, index) => {
-
           return (
             <li
-              className="flex flex-row gap-3 hover:border-b border-zinc-400 duration-200 ease-linear p-2 rounded-lg "
+              className="flex cursor-pointer flex-row gap-3 hover:border-b border-zinc-400 duration-200 ease-linear p-2 rounded-lg "
               key={index}
             >
-              <Avatar className="p-0.5 bg-white">
-                <AvatarImage
-                  className="rounded-full w-20 h-20"
-                  src={item.companyLogo.url}
-                />
-                <AvatarFallback className="text-primary">{item.companyLogo.alt}</AvatarFallback>
-              </Avatar>
-              <div className="flex flex-col gap-2 text-xs w-full">
+              <div className="flex flex-col gap-2 text-xs w-full ">
                 <p className="font-semibold">{item.company}</p>
                 <div className="w-full flex items-center justify-between text-zinc-700 dark:text-zinc-300 font-light">
                   <p className="">{item.title}</p>

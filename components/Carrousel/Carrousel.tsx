@@ -31,9 +31,10 @@ export default function App({ data }: AppProps) {
     <div className="my-10 min-h-fit">
       {isClient ? (
            <Swiper
+           loop={true}
            spaceBetween={20}
            centeredSlides={true}
-           autoplay={{ delay: 2500, disableOnInteraction: false,waitForTransition:true,stopOnLastSlide:true }}
+           autoplay={{ delay: 5000, disableOnInteraction: false,waitForTransition:true,stopOnLastSlide:true }}
            breakpoints={{
              576: {
                width: 576,
@@ -47,7 +48,7 @@ export default function App({ data }: AppProps) {
              1024: {
                width: 768,
                centeredSlides:true,
-               slidesPerView: 3,
+               slidesPerView: 4,
              },
            }}
            scrollbar={{
@@ -63,6 +64,7 @@ export default function App({ data }: AppProps) {
                   <Image
                     className="rounded-lg shadow-lg shadow-primary"
                     src={`${item.image.url}`}
+                    priority
                     alt={item.image.alt}
                     fill
                   />
