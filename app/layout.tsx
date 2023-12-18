@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/lib/theme-provider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BASE_URL } from "@/lib/constant";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Epilogue({
   subsets: ["latin"],
@@ -97,6 +98,7 @@ export default function RootLayout({
               </div>
             </main>
         </ThemeProvider>
+        <Analytics/>
       </body>
     </html>
   );
