@@ -15,8 +15,8 @@ const inter = Epilogue({
 const meta = {
   title: `Atharfaz`,
   description:
-    "This is My Personal Blog. I will share my journey and insights about my journey.",
-  images: `/static/favicon_io/android-chrome-512x512.png`,
+    "Frontend Developer  || React JS Enthusiast || TypeScript Addict",
+  images: `/static/athar.jpg`,
 };
 
 export const metadata: Metadata = {
