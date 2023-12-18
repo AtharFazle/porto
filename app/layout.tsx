@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
   },
   alternates: {
-    canonical: `${BASE_URL}/id`,
+    canonical: `${BASE_URL}`,
   },
   verification: {
     google: `google-site-verification=${process.env.GOOGLE_ID}`,
