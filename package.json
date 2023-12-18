@@ -16,6 +16,7 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@slate-serializers/react": "^2.1.0",
     "@vercel/analytics": "^1.1.1",
+    "@vercel/speed-insights": "^1.0.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "escape-html": "^1.0.3",

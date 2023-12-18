@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BASE_URL } from "@/lib/constant";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const inter = Epilogue({
   subsets: ["latin"],
@@ -35,6 +36,7 @@ export const metadata: Metadata = {
   },
   description: meta.description,
   openGraph: {
+    url: `${BASE_URL}`,
     title: meta.title,
     description: meta.description,
     locale: "id",
@@ -98,6 +100,7 @@ export default function RootLayout({
               </div>
             </main>
         </ThemeProvider>
+        <SpeedInsights />
         <Analytics/>
       </body>
     </html>
