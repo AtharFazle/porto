@@ -54,6 +54,14 @@ export async function generateMetadata({ params }: { params: ArticleProps["param
   const meta = DataBeforeReturnMeta[0].meta
   return {
     title: meta?.title,
+    icons: {
+      icon: [
+        "/static/favicon_io/android-chrome-512x512.png",
+        "/static/favicon_io/android-chrome-192x192.png",
+      ],
+      apple: ["/static/favicon_io/apple-touch-icon.png"],
+      shortcut: ["/static/favicon_io/android-chrome-512x512.png"],
+    },
     description: meta?.description,
     alternates: {
       canonical: `/article/${params.slug}`,
