@@ -1,4 +1,4 @@
-import { AiFillInstagram,AiFillLinkedin } from "react-icons/ai";
+import { AiFillInstagram,AiFillLinkedin,AiFillGithub } from "react-icons/ai";
 
 export const sosmed = [
     {
@@ -10,6 +10,11 @@ export const sosmed = [
       icon: AiFillLinkedin ,
       name: "Linkedin",
       link: "https://www.linkedin.com/in/athar-mawla-0a53031b2/",
+    },
+    {
+      icon: AiFillGithub ,
+      name: "Github",
+      link: "https://github.com/AtharFazle",
     },
   ];
 

@@ -35,6 +35,10 @@ export default async function sitemap() {
       url: `${BASE_URL}/experience`,
       lastModified: new Date(),
     },
+    {
+      url: `${BASE_URL}/contact`,
+      lastModified: new Date(),
+    },
     ...articlesDocs,
   ];
 }

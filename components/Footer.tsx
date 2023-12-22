@@ -12,7 +12,7 @@ const Footer:FC<FooterProps> = ({}) => {
       <div className="flex flex-row">
         {Links.map((item,index) => {
           return(
-            <Link href={`/${item.link}`} className="border-r-2 px-2 hover:text-primary duration-200 ease-linear" key={index}>{item.name}</Link>
+            <Link href={`${item.link}`} className="border-r-2 px-2 hover:text-primary duration-200 ease-linear" key={index}>{item.name}</Link>
           )
         })}
       </div>
