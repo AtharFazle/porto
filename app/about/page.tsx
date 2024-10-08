@@ -1,91 +1,74 @@
-import { TypographyH1 } from "@/components/typography";
-import { cn } from "@/lib/utils";
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import getUrl from "@/lib/getUrl";
-import { sosmed } from "@/components/NavigationMenu";
+import path from "path";
+import fs from "fs";
 import Link from "next/link";
-import { CMS_URL, RevalidateTime } from "@/lib/constant";
-import { Content, Homes } from "@/type/Payload";
-import serialize from "@/lib/renderBody";
 
-async function getDataAboutPage() {
-  const url = `${CMS_URL}/api/globals/Home?locale=en&draft=false&depth=1`;
-  const res = await fetch(url, {
-    next: {
-      revalidate: RevalidateTime,
-    },
-  });
-  if (!res.ok) {
-    return null;
-  }
-  const data: Homes = await res.json();
+import { TypographyH1, TypographyP } from "@/components/typography";
+import { sosmed } from "@/components/NavigationMenu";
+import Carrousel from "@/components/Carrousel/Carrousel";
+import { getImage } from "@/lib/getImageCarrousel";
 
-  return data;
-}
+export const dynamic = "force-dynamic";
 
 export default async function About() {
-  const url = getUrl();
-  const data = await getDataAboutPage();
+  const dataCarrousel = await getImage();
   return (
-    <div className={cn("flex flex-col-reverse gap-y-10 md:flex-row")}>
-      <div className="basis-1/2">
+    <div>
+      <div className="max-w-2xl space-y-10 text-left">
         <TypographyH1>
-          I’m Athar. I live in South Tangerang{" "}
-          <span className=" text-transparent bg-clip-text bg-gradient-to-br from-red-600 via-red-500 to-white">
-            (🇮🇩)
+          Frontend Engineer, TypeScript Addict, based in Tangerang Selatan.{" "}
+          <span className="bg-clip-text text-transparent bg-gradient-to-t from-white to-blue-500 dark:from-secondary dark:to-blue-500">
+            Ngalamers.
           </span>
-          ,<br /> Where I Destroy 🔥 The Worlds 🌍
         </TypographyH1>
-        <Link href={"/contact"}>
-          <Button
-            variant={"shadow"}
-            size={"lg"}
-            className="my-16 animate-bounce-horizontal"
-          >
-            Know me More?
-          </Button>
-        </Link>
-
-        {data?.content.map((item: Content, index) => {
-          return (
-            <div className="my-8 space-y-5" key={index}>
-              <TypographyH1>{item.title}</TypographyH1>
-              <div className="space-y-5">
-                {serialize(item.description as any)}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-      <div className="basis-1/2 space-y-16">
-        <div className="rounded-full w-[250px] sm:w-[300px] md:w-[400px] h-[350px] sm:h-[450px] md:h-[570px] flex justify-end  relative">
-          <Image
-            src={`${data?.heading_image?.url}`}
-            fill
-            alt="athar"
-            className="rounded-lg skew-x-6 translate-x-0 sm:translate-x-10 md:translate-x-16 -skew-y-6 shadow-2xl shadow-black"
-          />
-        </div>
-        <ul className="space-y-2 w-full gap-y-4">
-          {sosmed.map((item, index) => (
-            <li
-              key={index}
-              className="flex items-center gap-2 justify-end text-3xl hover:underline underline-offset-4 duration-200 transition-all ease-linear"
+        <TypographyP>
+          Hello My name is{" "}
+          <span className="text-primary font-semibold dark:font-medium">
+            {" "}
+            Athar Fazle Mawla{" "}
+          </span>
+          , my friend call me{" "}
+          <span className="text-primary font-semibold dark:font-medium">
+            Athar
+          </span>
+          . I am a programming enthusiast who has a passion for programming. My
+          focus is on{" "}
+          <span className="text-primary font-semibold dark:font-medium">
+            front-end web applications
+          </span>
+          . My background is information systems focusing study on specializing
+          business flow, leading project and develop a product. My expertise are
+          as a{" "}
+          <span className="text-primary font-semibold dark:font-medium">
+            Front End developer
+          </span>
+          . I am also have{" "}
+          <span className="text-primary font-semibold dark:font-medium">
+            3D Artist Experience
+          </span>
+          . Lets Connect !
+        </TypographyP>
+        <div className="flex flex-row gap-2">
+          {sosmed.map((item) => (
+            <Link
+              target="_blank"
+              aria-label={`Redirect to ${item.name}`}
+              href={item.link}
+              className="text-4xl text-slate-500 hover:text-primary duration-200 ease-linear"
+              key={item.name}
             >
-              {<item.icon />}
-              <Link
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm"
-              >
-                Follow me on {item.name}
-              </Link>
-            </li>
+              <item.icon></item.icon>
+            </Link>
           ))}
-        </ul>
+        </div>
       </div>
+      <Carrousel data={dataCarrousel} />
+      {/* <div className="w-full flex flex-col-reverse gap-y-10 gap-x-5 md:flex-row my-10">
+        <div className="basis-2/3"><FeaturedArticles/></div>
+        <div className="basis-1/3">
+          {" "}
+          <Work></Work>
+        </div>
+      </div> */}
     </div>
   );
 }

@@ -7,7 +7,11 @@ import qs from "qs";
 import { responseArticles } from "@/type/Payload";
 import { formatDate } from "@/lib/formatDate";
 import Image from "next/image";
-import { TypographyH1, TypographyH2, TypographyH4 } from "@/components/typography";
+import {
+  TypographyH1,
+  TypographyH2,
+  TypographyH4,
+} from "@/components/typography";
 import { ChevronRightIcon } from "@radix-ui/react-icons";
 import { MdChevronRight } from "react-icons/md";
 import Link from "next/link";
@@ -60,10 +64,10 @@ const Content: FC<ContentProps> = () => {
       const stringifiedQuery = qs.stringify(
         {
           where: query,
-          locale: 'en',
-          draft: 'false',
+          locale: "en",
+          draft: "false",
           depth: 1,
-          limit: 5
+          limit: 5,
         },
         { addQueryPrefix: true }
       );
@@ -90,7 +94,6 @@ const Content: FC<ContentProps> = () => {
 
     getData();
   }, [debounceSearch, selectedFilters]);
-
 
   return (
     <div className="mt-10 text-slate-500 dark:text-slate-200">
@@ -125,6 +128,7 @@ const Content: FC<ContentProps> = () => {
               {item}
             </p>
           ))}
+
           <p
             onClick={() => selectValue("all")}
             className={cn(
@@ -140,8 +144,13 @@ const Content: FC<ContentProps> = () => {
         </div>
         {debounceSearch && (
           <p>
-            Result for <strong>{debounceSearch}</strong>  {selectedFilters.map((item,index)=>{
-              return <span key={index}>& <strong>{item}</strong> Category</span>
+            Result for <strong>{debounceSearch}</strong>{" "}
+            {selectedFilters.map((item, index) => {
+              return (
+                <span key={index}>
+                  & <strong>{item}</strong> Category
+                </span>
+              );
             })}
           </p>
         )}
@@ -202,9 +211,11 @@ const Content: FC<ContentProps> = () => {
         </div>
       )}
       {loading === true && <div>loading....</div>}
-      {data?.totalDocs === 0 && (
-        <TypographyH4 classNames={"text-center"}>Data Kosong 🤧</TypographyH4>
-      )}
+      {/* {data?.totalDocs === 0 && ( */}
+      <TypographyH4 classNames={"text-center"}>
+        Article Masih On Fix 🤧
+      </TypographyH4>
+      {/* )} */}
     </div>
   );
 };

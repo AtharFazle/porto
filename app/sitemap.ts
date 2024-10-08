@@ -1,18 +1,18 @@
 import { BASE_URL, CMS_URL, RevalidateTime } from "@/lib/constant";
-import { responseArticles } from "@/type/Payload";
+// import { responseArticles } from "@/type/Payload";
 
 export default async function sitemap() {
-  const url = `${CMS_URL}/api/articles?&draft=false&depth=1&locale=en`;
-  const articles = await fetch(url, {
-    next: {
-      revalidate: RevalidateTime,
-    },
-  });
-  const dataArticles: responseArticles = await articles.json();
-  const articlesDocs = dataArticles.docs.map((article) => ({
-    url: `${BASE_URL}/article/${article.slug}`,
-    lastModified: article.updatedAt,
-  }));
+  // const url = `${CMS_URL}/api/articles?&draft=false&depth=1&locale=en`;
+  // const articles = await fetch(url, {
+  //   next: {
+  //     revalidate: RevalidateTime,
+  //   },
+  // });
+  // const dataArticles: responseArticles = await articles.json();
+  // const articlesDocs = dataArticles.docs.map((article) => ({
+  //   url: `${BASE_URL}/article/${article.slug}`,
+  //   lastModified: article.updatedAt,
+  // }));
 
   return [
     {
@@ -39,6 +39,6 @@ export default async function sitemap() {
       url: `${BASE_URL}/contact`,
       lastModified: new Date(),
     },
-    ...articlesDocs,
+    // ...articlesDocs,
   ];
 }

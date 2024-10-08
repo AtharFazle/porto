@@ -101,7 +101,8 @@ export interface DataProject{
   name:string;
   desc:string;
   link:string;
-  HeadingImg:Value
+  url:string
+  HeadingImg:string
   createdAt:string
   updatedAt:string
 }

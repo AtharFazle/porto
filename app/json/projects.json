@@ -1,0 +1,274 @@
+[
+    {
+        "_id": {
+            "$oid": "655c2fe0b5220c9beefaea94"
+        },
+        "name": "Cuit Indonesia (Community Management)",
+        "desc": "Community Engagement Platform: Managing Communities for Amplification and Perception Building",
+        "link": "https://komune.id/",
+        "HeadingImg": "655c2fd8b5220c9beefaea8b",
+        "filename": "Komune.png",
+        "mimeType": "image/jpeg",
+        "filesize": {
+            "$numberInt": "180053"
+        },
+        "width": {
+            "$numberInt": "1280"
+        },
+        "height": {
+            "$numberInt": "720"
+        },
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700540384672"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700540670474"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        },
+        "url": "/static/projects/Komune.png"
+    },
+    {
+        "_id": {
+            "$oid": "655c2fe0b5220c9beefaea94"
+        },
+        "name": "Pos Indonesia",
+        "desc": "Website untuk BUMN PT.Persero Indonesia (Pos Indonesia). Technology yang digunakan adalah Next JS. dan Payload CMS Sebagai Headless CMS",
+        "link": "https://posfin.vercel.app/id",
+        "HeadingImg": "655c2fd8b5220c9beefaea8b",
+        "filename": "Pos-Indonesia.png",
+        "mimeType": "image/jpeg",
+        "filesize": {
+            "$numberInt": "180053"
+        },
+        "width": {
+            "$numberInt": "1280"
+        },
+        "height": {
+            "$numberInt": "720"
+        },
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700540384672"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700540670474"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        },
+        "url": "/static/projects/Pos-Indonesia.png"
+    },
+    {
+        "_id": {
+            "$oid": "655c32b4b5220c9beefaebac"
+        },
+        "name": "Landing Page VR",
+        "desc": "Just Dummy Project for Training Tailwind CSS & Animation",
+        "link": "https://landing-page-vr.netlify.app/",
+        "HeadingImg": "655c328db5220c9beefaeba3",
+        "filename": "Landing-Page-VR-50cb5dd7-1.png",
+        "mimeType": "image/png",
+        "filesize": {
+            "$numberInt": "198216"
+        },
+        "width": {
+            "$numberInt": "1290"
+        },
+        "height": {
+            "$numberInt": "695"
+        },
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700541108699"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700541118629"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        },
+        "url": "/static/projects/Landing-page-VR.png"
+    },
+    {
+        "_id": {
+            "$oid": "655c2f6ab5220c9beefaea77"
+        },
+        "name": "Digimon",
+        "desc": "Digimon adalah Aplikasi Social Media Monitoring . Technology yang digunakan adalah CodeIgniter 4",
+        "link": "https://digimon.proactiv.id/login",
+        "HeadingImg": "655c2f0db5220c9beefaea6e",
+        "filename": "Digimon.png",
+        "mimeType": "image/jpeg",
+        "filesize": {
+            "$numberInt": "131919"
+        },
+        "width": {
+            "$numberInt": "1280"
+        },
+        "height": {
+            "$numberInt": "720"
+        },
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700540266192"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700541691892"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        },
+        "url": "/static/projects/Digimon.png"
+    },
+    {
+        "_id": {
+            "$oid": "655c3359b5220c9beefaebed"
+        },
+        "name": "Whatsapp Clone",
+        "desc": "My 2nd Project on React. Just Dummy Project for practicing Hooks on React",
+        "link": "https://whatsapp-clone-athar.netlify.app/",
+        "HeadingImg": "655c3332b5220c9beefaebd9",
+        "filename": "Whatsapp Clone-3291a529-1.png",
+        "mimeType": "image/png",
+        "filesize": {
+            "$numberInt": "14644"
+        },
+        "width": {
+            "$numberInt": "1309"
+        },
+        "height": {
+            "$numberInt": "689"
+        },
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700541273006"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700541273006"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        },
+        "url": "/static/projects/Whatsapp-clone.png"
+    },
+    {
+        "_id": {
+            "$oid": "655a0c25b5220c9beefade8c"
+        },
+        "name": "Real Estate",
+        "desc": "Real Estate Website. In This Website we can search home depends on Location & Others",
+        "link": "https://real-estate-athar.netlify.app/",
+        "HeadingImg": "655a0bf7b5220c9beefade83",
+        "filename": "Real-estate-16fa4fd7-1.png",
+        "mimeType": "image/png",
+        "filesize": {
+            "$numberInt": "455648"
+        },
+        "width": {
+            "$numberInt": "1308"
+        },
+        "height": {
+            "$numberInt": "699"
+        },
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700400165823"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700539036932"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        },
+        "url": "/static/projects/Real-Estate.png"
+    },
+    {
+        "_id": {
+            "$oid": "655c3236b5220c9beefaeb78"
+        },
+        "name": "Old Portofolio ",
+        "desc": "My First React Project for Personal Information",
+        "link": "https://portofolio-athar.netlify.app/",
+        "HeadingImg": "655c3229b5220c9beefaeb6f",
+        "filename": "Old Porto-1.jpg",
+        "mimeType": "image/jpeg",
+        "filesize": {
+            "$numberInt": "146285"
+        },
+        "width": {
+            "$numberInt": "1280"
+        },
+        "height": {
+            "$numberInt": "720"
+        },
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700540982197"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700540988044"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        },
+        "url": "/static/projects/Old-Portofolio.png"
+    },
+    {
+        "_id": {
+            "$oid": "655c20a6b5220c9beefae7ee"
+        },
+        "name": "Proactiv ",
+        "desc": "Proactiv adalah Aplikasi Sosial media monitoring yang dibangun diatas Technology Next JS (React) sebagai Frontend & Backend Node JS dengan Database Prisma",
+        "link": "https://app.proactiv.id/",
+        "HeadingImg": "655c20a4b5220c9beefae7e5",
+        "filename": "Proactiv-1.jpg",
+        "mimeType": "image/jpeg",
+        "filesize": {
+            "$numberInt": "83031"
+        },
+        "width": {
+            "$numberInt": "1280"
+        },
+        "height": {
+            "$numberInt": "720"
+        },
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700536486983"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700541973760"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        },
+        "url": "/static/projects/Proactiv-1.jpg"
+    }
+]

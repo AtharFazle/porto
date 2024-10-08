@@ -1,0 +1,202 @@
+{
+    "_id": {
+        "$oid": "6559f033b5220c9beefadb72"
+    },
+    "heading_text": "I’m Athar. I live in Malang (🇮🇩), Where I Destroy 🔥 The Worlds 🌍",
+    "heading_image": "6559f02fb5220c9beefadb6a",
+    "content": {
+        "en": [
+            {
+                "title": "Who's Athar ? 🕵️‍♂️ ",
+                "description": [
+                    {
+                        "children": [
+                            {
+                                "text": "\nBorn With Name Athar Fazle Mawla, However I am known as Athar. Just A Stupid who wants to Destroy The World. No, Iam Joke. Athar Just A Stupid who cannot Stop from learn Programming\n\n"
+                            }
+                        ]
+                    }
+                ],
+                "id": "6559f39f6bf327418fe2d80b"
+            },
+            {
+                "title": "The Real Me  🧑‍💻 ",
+                "description": [
+                    {
+                        "children": [
+                            {
+                                "text": "Namaku adalah "
+                            },
+                            {
+                                "text": "Athar Fazle Mawla. ",
+                                "bold": true
+                            },
+                            {
+                                "text": " Orang orang memanggilku Athar kadang juga ada yang memanggil saya "
+                            },
+                            {
+                                "text": "Fazle. ",
+                                "bold": true
+                            },
+                            {
+                                "text": "Saya adalah seorang Software Engineer yang fokus di bidang "
+                            },
+                            {
+                                "text": "Fullstack Developer. ",
+                                "bold": true
+                            }
+                        ]
+                    }
+                ],
+                "id": "6559f3b56bf327418fe2d80c"
+            },
+            {
+                "title": "Living Guide 🕌🙏",
+                "description": [
+                    {
+                        "children": [
+                            {
+                                "text": "My Guide For Living is from"
+                            },
+                            {
+                                "text": " ",
+                                "bold": true
+                            },
+                            {
+                                "bold": true,
+                                "text": "Hadits",
+                                "underline": true
+                            },
+                            {
+                                "text": " &  "
+                            },
+                            {
+                                "text": "Alquran",
+                                "bold": true,
+                                "underline": true
+                            },
+                            {
+                                "bold": true,
+                                "text": " "
+                            },
+                            {
+                                "text": ": "
+                            }
+                        ]
+                    },
+                    {
+                        "type": "ol",
+                        "children": [
+                            {
+                                "type": "li",
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "text": "Hiduplah dengan penuh kasih sayang, sebagaimana Allah mencintai hamba-hamba-Nya yang penuh kasih sayang.\" (Quran 3:159)"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "li",
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "text": "Berbuat baik kepada sesama adalah cermin dari kebaikan hati, dan kebaikan hati adalah cahaya yang menyinari jalannya manusia.\" (Quran 24:35)"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "li",
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "text": "Hiduplah dengan rendah hati dan bersikap adil, karena Allah menyukai orang-orang yang adil.\" (Quran 16:90)"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "li",
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "text": "Bertakwalah kepada Allah dan bersyukurlah atas nikmat-Nya, karena syukur membuka pintu keberkahan.\" (Quran 2:152)"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "li",
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "text": "Janganlah kamu menyakiti orang lain dengan perkataan atau perbuatan, karena setiap tindakanmu akan menjadi saksi di hadapan-Nya.\" (Quran 4:148)"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "li",
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "text": "Bersabarlah dalam menghadapi cobaan, karena sesungguhnya bersama kesulitan ada kemudahan.\" (Quran 94:6)"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "li",
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "text": "Berkatilah dalam memberi dan selalu ingatlah bahwa kebaikan yang kau berikan akan kembali padamu.\" (Quran 2:267)"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "children": [
+                            {
+                                "text": "\n\n"
+                            }
+                        ]
+                    }
+                ],
+                "id": "6559f3cf6bf327418fe2d80d"
+            }
+        ]
+    },
+    "globalType": "Home",
+    "createdAt": {
+        "$date": {
+            "$numberLong": "1700393011021"
+        }
+    },
+    "updatedAt": {
+        "$date": {
+            "$numberLong": "1702699102247"
+        }
+    },
+    "__v": {
+        "$numberInt": "0"
+    }
+}

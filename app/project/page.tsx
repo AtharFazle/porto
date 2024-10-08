@@ -1,8 +1,10 @@
+import fs from "fs";
+import path from "path";
 import { TypographyH1, TypographyP } from "@/components/typography";
 import { cn } from "@/lib/utils";
 import React, { FC } from "react";
-import { CMS_URL, RevalidateTime } from "@/lib/constant";
-import { DataProject, responseProject } from "@/type/Payload";
+// import { CMS_URL, RevalidateTime } from "@/lib/constant";
+import { DataProject } from "@/type/Payload";
 import Image from "next/image";
 import { formatDate } from "@/lib/formatDate";
 import Link from "next/link";
@@ -11,23 +13,15 @@ import { MdLink } from "react-icons/md";
 interface ProjectProps {}
 
 async function getData() {
-  const url = `${CMS_URL}/api/Projects?locale=en&draft=false&depth=1`;
-  const response = await fetch(url, {
-    next: {
-      revalidate: RevalidateTime,
-    },
-  });
+  const filePath = path.join(process.cwd(), "app/json", "projects.json");
+  const jsonData = fs.readFileSync(filePath, "utf-8");
+  const data = JSON.parse(jsonData);
 
-  if (!response.ok) {
-    return null;
-  }
-  const data: responseProject = await response.json();
-
-  return data.docs.map((item: DataProject) => ({
+  return data.map((item: DataProject) => ({
     id: item.id,
     name: item.name,
-    description: item.desc,
-    HeadingImg: item.HeadingImg,
+    desc: item.desc,
+    HeadingImg: item.url,
     link: item.link,
     createdAt: item.createdAt,
     updatedAt: item.updatedAt,
@@ -51,56 +45,45 @@ const Project: FC<ProjectProps> = async ({}) => {
       <div
         className={cn("grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ")}
       >
-{data
-  ?.sort((a, b) => {
-    if (a.name.toLowerCase() === "pos indonesia") {
-      return -1; // a ditempatkan lebih awal
-    } else if (b.name.toLowerCase() === "pos indonesia") {
-      return 1; // b ditempatkan lebih awal
-    } else {
-      // Jika bukan "Pos Indonesia", menggunakan tanggal updatedAt
-      return new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime();
-    }
-  })
-  .map((item, index) => {
-            return (
-              <Link
-                key={index}
-                href={item.link}
-                target="_blank"
-                className="space-y-5 p-5 border-2 border-primary/60 md:border-none rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 ease-in duration-200 group cursor-pointer"
+        {data.map((item: DataProject, index: number) => {
+          return (
+            <Link
+              key={index}
+              href={item.link}
+              target="_blank"
+              className="space-y-5 p-5 border-2 border-primary/60 md:border-none rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 ease-in duration-200 group cursor-pointer"
+            >
+              <div className="relative w-full h-40 lg:w-80 lg:h-48 shadow-lg dark:shadow-primary/50">
+                <Image
+                  src={item.HeadingImg}
+                  alt={item.name}
+                  className="rounded-md"
+                  fill
+                />
+              </div>
+              <div
+                className={cn(
+                  "cursor-pointer transition-colors duration-200 ease-linear",
+                  "bg-slate-200 dark:bg-slate-700",
+                  "w-fit text-xs",
+                  "px-3 py-1 rounded-md"
+                )}
               >
-                <div className="relative w-full h-40 lg:w-80 lg:h-48 shadow-lg dark:shadow-primary/50">
-                  <Image
-                    src={`${item.HeadingImg.url}`}
-                    alt={item.HeadingImg.alt}
-                    className="rounded-md"
-                    fill
-                  />
-                </div>
-                <div
-                  className={cn(
-                    "cursor-pointer transition-colors duration-200 ease-linear",
-                    "bg-slate-200 dark:bg-slate-700",
-                    "w-fit text-xs",
-                    "px-3 py-1 rounded-md"
-                  )}
-                >
-                  {formatDate(item.updatedAt)}
-                </div>
-                <p className="font-semibold text-base">{item.name}</p>
-                <TypographyP
-                  classNames={"text-slate-600 dark:text-slate-400 text-sm"}
-                >
-                  {item.description}
-                </TypographyP>
-                <div className="w-full flex flex-row gap-1 items-center justify-center group-hover:text-primary duration-200 ease-linear pt-16 group-hover:animate-bounce-horizontal">
-                  <MdLink className={cn("text-xl")} />
-                  <p className="text-sm">{item.name}</p>
-                </div>
-              </Link>
-            );
-          })}
+                {/* {formatDate(item.updatedAt)} */}
+              </div>
+              <p className="font-semibold text-base">{item.name}</p>
+              <TypographyP
+                classNames={"text-slate-600 dark:text-slate-400 text-sm"}
+              >
+                {item.desc}
+              </TypographyP>
+              <div className="w-full flex flex-row gap-1 items-center justify-center group-hover:text-primary duration-200 ease-linear pt-16 group-hover:animate-bounce-horizontal">
+                <MdLink className={cn("text-xl")} />
+                <p className="text-sm">Link Website</p>
+              </div>
+            </Link>
+          );
+        })}
       </div>
     </div>
   );
