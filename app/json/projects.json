@@ -1,6 +1,142 @@
 [
     {
         "_id": {
+            "$oid": "6841a000b5220c9beef00001"
+        },
+        "name": "IHLD",
+        "desc": "an Internal Apps that provides information about ODP and Manage ODP Order for telkom Indonesia",
+        "link": "#",
+        "HeadingImg": "6841a000b5220c9beef00002",
+        "filename": "IHLD.png",
+        "mimeType": "image/png",
+        "filesize": {
+            "$numberInt": "200000"
+        },
+        "width": {
+            "$numberInt": "1280"
+        },
+        "height": {
+            "$numberInt": "720"
+        },
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1769472000000"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1769472000000"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        },
+        "url": "/static/projects/IHLD.png"
+    },
+    {
+        "_id": {
+            "$oid": "6841a000b5220c9beef00003"
+        },
+        "name": "Sequre.id",
+        "desc": "A comprehensive platform for secure identity management and authentication.",
+        "link": "https://sequre.id",
+        "HeadingImg": "6841a000b5220c9beef00004",
+        "filename": "Sequre-id.png",
+        "mimeType": "image/png",
+        "filesize": {
+            "$numberInt": "200000"
+        },
+        "width": {
+            "$numberInt": "1280"
+        },
+        "height": {
+            "$numberInt": "720"
+        },
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1735689600000"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1769472000000"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        },
+        "url": "/static/projects/Sequre-id.png"
+    },
+    {
+        "_id": {
+            "$oid": "6841a000b5220c9beef00005"
+        },
+        "name": "Space V-HUB",
+        "desc": "is a task management application that helps users organize, prioritize, and complete their work more efficiently. With task management features, reminder notifications, an intuitive interface, and productivity integrations, this app is ideal for individuals and teams to improve time management.",
+        "link": "#",
+        "HeadingImg": "6841a000b5220c9beef00006",
+        "filename": "Space-V-HUB.png",
+        "mimeType": "image/png",
+        "filesize": {
+            "$numberInt": "200000"
+        },
+        "width": {
+            "$numberInt": "1280"
+        },
+        "height": {
+            "$numberInt": "720"
+        },
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1735689600000"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1735689600000"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        },
+        "url": "/static/projects/Space-V-HUB.png"
+    },
+    {
+        "_id": {
+            "$oid": "6841a000b5220c9beef00007"
+        },
+        "name": "RTOline",
+        "desc": "is a task management application that helps users organize, prioritize, and complete their work more efficiently. With task management features, reminder notifications, an intuitive interface, and productivity integrations, this app is ideal for individuals and teams to improve time management.",
+        "link": "#",
+        "HeadingImg": "6841a000b5220c9beef00008",
+        "filename": "RTOline.png",
+        "mimeType": "image/png",
+        "filesize": {
+            "$numberInt": "200000"
+        },
+        "width": {
+            "$numberInt": "1280"
+        },
+        "height": {
+            "$numberInt": "720"
+        },
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1704067200000"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1704067200000"
+            }
+        },
+        "__v": {
+            "$numberInt": "0"
+        },
+        "url": "/static/projects/RTOline.png"
+    },
+    {
+        "_id": {
             "$oid": "655c2fe0b5220c9beefaea94"
         },
         "name": "Cuit Indonesia (Community Management)",
